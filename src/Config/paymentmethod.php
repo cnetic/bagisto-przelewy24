@@ -7,7 +7,8 @@ return [
         'class' => 'CNetic\Przelewy24\Payment\Przelewy24',
         'sandbox' => true,
         'active' => true,
-        'business_account' => 'test@webkul.com',
-        'sort' => 3
+        'business_account' => 'test@webkul.co1m',
+        'sort' => 3,
+        'admin_view' => 'cnetic-przelewy24:admin.edit'
     ]
 ];

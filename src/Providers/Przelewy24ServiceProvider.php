@@ -1,6 +1,6 @@
 <?php
 
-namespace CNetic\Payment\Providers;
+namespace CNetic\Przelewy24\Providers;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -20,6 +20,7 @@ class Przelewy24ServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerConfig();
+        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'cnetic-przelewy24');
     }
 
     /**
@@ -29,10 +30,10 @@ class Przelewy24ServiceProvider extends ServiceProvider
        */
     protected function registerConfig()
     {
-        $this->mergeConfigFrom(
-            dirname(__DIR__) . '/Config/paymentmethod.php',
-            'paymentmethods'
-        );
+        // $this->mergeConfigFrom(
+        //     dirname(__DIR__) . '/Config/paymentmethod.php',
+        //     'paymentmethods'
+        // );
 
         $this->mergeConfigFrom(
             dirname(__DIR__) . '/Config/system.php',

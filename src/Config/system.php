@@ -1,18 +1,11 @@
 <?php
 
 return [
-    [
-        'key' => 'sales',
-        'name' => 'admin::app.admin.system.sales',
-        'sort' => 1
-    ], [
-        'key' => 'sales.paymentmethods',
-        'name' => 'admin::app.admin.system.payment-methods',
-        'sort' => 2,
-    ], [
+   [
         'key' => 'sales.paymentmethods.przelewy24_standard',
         'name' => 'admin::app.admin.system.przelewy24',
-        'sort' => 1,
+        'admin_view' => 'cnetic-przelewy24::admin.edit',
+        'sort' => 2,
         'fields' => [
             [
                 'name' => 'title',
