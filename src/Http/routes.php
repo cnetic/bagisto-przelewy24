@@ -1,7 +1,4 @@
 <?php
-
-
-
 Route::group(['middleware' => ['web']], function () {
     Route::prefix('przelewy24/standard')->group(function () {
         Route::get('/redirect', 'CNetic\Przelewy24Http\Controllers\StandardController@redirect')->name('przelewy24.standard.redirect');
