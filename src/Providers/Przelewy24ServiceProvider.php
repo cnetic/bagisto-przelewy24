@@ -1,7 +1,9 @@
 <?php
 
 namespace CNetic\Przelewy24\Providers;
+
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Event;
 
 /**
 * Payment service provider
@@ -20,8 +22,23 @@ class Przelewy24ServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerConfig();
-        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'cnetic-przelewy24');
     }
+
+    public function boot()
+    {
+        $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'cnetic-przelewy24');
+        $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'cnetic-przelewy24');
+        Event::listen('bagisto.admin.layout.head', function ($viewRenderEventManager) {
+            $viewRenderEventManager->addTemplate('cnetic-przelewy24::layouts.style');
+        });
+
+        Event::listen('bagisto.admin.layout.body.after', function ($viewRenderEventManager) {
+            $viewRenderEventManager->addTemplate('cnetic-przelewy24::layouts.js');
+        });
+    }
+
+
+
 
     /**
        * Register package config.
@@ -30,10 +47,10 @@ class Przelewy24ServiceProvider extends ServiceProvider
        */
     protected function registerConfig()
     {
-        // $this->mergeConfigFrom(
-        //     dirname(__DIR__) . '/Config/paymentmethod.php',
-        //     'paymentmethods'
-        // );
+        $this->mergeConfigFrom(
+            dirname(__DIR__) . '/Config/paymentmethod.php',
+            'paymentmethods'
+        );
 
         $this->mergeConfigFrom(
             dirname(__DIR__) . '/Config/system.php',

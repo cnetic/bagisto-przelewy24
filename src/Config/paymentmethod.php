@@ -8,6 +8,8 @@ return [
         'sandbox' => true,
         'active' => true,
         'business_account' => 'test@webkul.co1m',
+        'p24_merchant_id' => '76632',
+        'crc_key' => '759417f7370e5666',
         'sort' => 3,
         'admin_view' => 'cnetic-przelewy24:admin.edit'
     ]

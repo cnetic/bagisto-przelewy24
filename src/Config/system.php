@@ -3,7 +3,7 @@
 return [
    [
         'key' => 'sales.paymentmethods.przelewy24_standard',
-        'name' => 'admin::app.admin.system.przelewy24',
+        'name' => 'cnetic-przelewy24::app.admin.system.przelewy24',
         'admin_view' => 'cnetic-przelewy24::admin.edit',
         'sort' => 2,
         'fields' => [
@@ -14,7 +14,25 @@ return [
                 'validation' => 'required',
                 'channel_based' => false,
                 'locale_based' => true
-            ], [
+            ],
+
+            [
+                'name' => 'p24_merchant_id',
+                'title' => 'admin::app.admin.system.p24_merchant_id',
+                'type' => 'text',
+                'validation' => 'required',
+                'channel_based' => false,
+                'locale_based' => true
+            ],
+            [
+                'name' => 'crc_key',
+                'title' => 'admin::app.admin.system.crc_key',
+                'type' => 'text',
+                'validation' => 'required',
+                'channel_based' => false,
+                'locale_based' => true
+            ],
+            [
                 'name' => 'description',
                 'title' => 'admin::app.admin.system.description',
                 'type' => 'textarea',
