@@ -22,12 +22,16 @@
         "url": "https://github.com/cnetic/bagisto-przelewy24/issues"
     },
     "homepage": "https://github.com/cnetic/bagisto-przelewy24#readme",
-    "devDependencies": {},
+    "devDependencies": {
+        "sass": "^1.23.7",
+        "sass-loader": "^8.0.0",
+        "vue-template-compiler": "^2.6.10"
+    },
     "dependencies": {
         "cross-env": "^6.0.3",
         "element-ui": "^2.12.0",
-        "laravel-mix": "^2.1",
-        "laravel-mix-merge-manifest": "^0.1.1",
+        "laravel-mix": "^5.0.0",
+        "laravel-mix-merge-manifest": "^0.1.2",
         "vue": "^2.6.10"
     }
 }
