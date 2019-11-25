@@ -1,9 +1,5 @@
 <template>
-<span>
-    <slot>
         <el-button>Test Connection</el-button>
-    </slot>
-</span>
 </template>
 
 <script>
@@ -13,6 +9,7 @@ import {
 } from 'element-ui';
 
 export default {
+    name: "TestConnection",
     props: {
 
     },
@@ -22,7 +19,7 @@ export default {
         }
     },
     mounted() {
-
+      alert(1);
     }
 };
 </script>
