@@ -1,7 +1,7 @@
 <template>
-<div>
-    <el-button>Test Api Connection</el-button>
-</div>
+  <div>
+      <el-button>Test Api Connection</el-button>
+  </div>
 </template>
 
 <script>
@@ -11,7 +11,7 @@ import {
 } from 'element-ui';
 
 export default {
-    name: "connection-test",
+
     props: {
 
     },
@@ -22,7 +22,7 @@ export default {
         'el-button': Button
     },
     mounted() {
-        alert(1);
+      
     }
 };
 </script>

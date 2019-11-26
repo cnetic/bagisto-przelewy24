@@ -4,6 +4,6 @@ import {
     Button
 } from 'element-ui';
 
-console.log(TestConnection);
-Vue.use(ConnectionTest);
-Vue.use(Button);
+console.log(ConnectionTest);
+Vue.component('connection-test', ConnectionTest);
+//Vue.use(Button);
