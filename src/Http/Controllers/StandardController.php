@@ -1,10 +1,11 @@
 <?php
 
-namespace Webkul\Paypal\Http\Controllers;
+namespace CNetic\Przelewy24\Http\Controllers;
 
 use Webkul\Checkout\Facades\Cart;
 use Webkul\Sales\Repositories\OrderRepository;
 use Webkul\Paypal\Helpers\Ipn;
+use CNetic\Przelewy24\Payment\Przelewy24;
 
 /**
  * Paypal Standard controller
@@ -22,11 +23,11 @@ class StandardController extends Controller
     protected $orderRepository;
 
     /**
-     * Ipn object
+     * Payment
      *
      * @var array
      */
-    protected $ipnHelper;
+    protected $payment;
 
     /**
      * Create a new controller instance.
@@ -34,10 +35,10 @@ class StandardController extends Controller
      * @param  \Webkul\Attribute\Repositories\OrderRepository  $orderRepository
      * @return void
      */
-    public function __construct(OrderRepository $orderRepository, Ipn $ipnHelper)
+    public function __construct(OrderRepository $orderRepository, Przelewy24 $payment)
     {
         $this->orderRepository = $orderRepository;
-        $this->ipnHelper = $ipnHelper;
+        $this->payment = $payment;
     }
 
     /**
@@ -78,13 +79,14 @@ class StandardController extends Controller
         return redirect()->route('shop.checkout.success');
     }
 
+
     /**
-     * Paypal Ipn listener
+     * Test connection to service
      *
      * @return \Illuminate\Http\Response
      */
-    public function ipn()
+    public function testConnection()
     {
-        $this->ipnHelper->processIpn(request()->all());
+        dump($this->payment);
     }
 }

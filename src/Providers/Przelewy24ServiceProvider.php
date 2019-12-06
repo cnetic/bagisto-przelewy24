@@ -28,6 +28,8 @@ class Przelewy24ServiceProvider extends ServiceProvider
     {
         $this->loadTranslationsFrom(__DIR__ . '/../Resources/lang', 'cnetic-przelewy24');
         $this->loadViewsFrom(__DIR__ . '/../Resources/views', 'cnetic-przelewy24');
+        $this->loadRoutesFrom(__DIR__ . '/../Http/routes.php');
+
         Event::listen('bagisto.admin.layout.head', function ($viewRenderEventManager) {
             $viewRenderEventManager->addTemplate('cnetic-przelewy24::layouts.style');
         });

@@ -497,7 +497,6 @@
   </div>
 </el-col>
   <el-col :span="12">
-  <test-connection></test-connection>
   <connection-test></connection-test>
   <el-button>ja</el-button>
 </el-col>

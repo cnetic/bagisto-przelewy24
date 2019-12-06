@@ -1,8 +1,9 @@
 <?php
 
 namespace CNetic\Przelewy24\Payment;
-use Webkul\Payment\Payment\Payment;
 
+use Webkul\Payment\Payment\Payment;
+use CNetic\Payment\Contracts\PaymentContract;
 
 /**
  * Cash On Delivery payment method class
@@ -10,7 +11,7 @@ use Webkul\Payment\Payment\Payment;
  * @author    Dariusz Męciński <d.mecinski@cnetic.pl>
  * @copyright 2019 CNetic Sp. z.o.o (http://www.cnetic.pl)
  */
-class Przelewy24 extends Payment
+class Przelewy24 extends Payment implements PaymentContract
 {
     /**
      * Payment method code
@@ -22,5 +23,15 @@ class Przelewy24 extends Payment
     public function getRedirectUrl()
     {
         return route('przelewy24.standard.redirect');
+    }
+
+    public function testApi()
+    {
+        // code...
+    }
+
+    public function testSandbox()
+    {
+        // code...
     }
 }
