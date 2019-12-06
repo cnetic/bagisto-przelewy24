@@ -1,6 +1,6 @@
 <?php
 
-namespace Webkul\Paypal\Http\Controllers;
+namespace Cnetic\Przelewy24\Http\Controllers;
 
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;

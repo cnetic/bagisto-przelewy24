@@ -497,13 +497,7 @@
   </div>
 </el-col>
   <el-col :span="12">
-    <div class="grid-content bg-purple">
-      <el-button>Default</el-button>
-      <el-button type="primary">Primary</el-button>
-      <el-button type="success">Success</el-button>
-      <el-button type="info">Info</el-button>
-      <el-button type="warning">Warning</el-button>
-      <el-button type="danger">Danger</el-button>
-  </div>
+  <connection-test></connection-test>
+  <el-button>ja</el-button>
 </el-col>
 </el-row>
