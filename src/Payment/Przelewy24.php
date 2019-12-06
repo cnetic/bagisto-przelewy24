@@ -5,7 +5,7 @@ use Webkul\Payment\Payment\Payment;
 
 
 /**
- * Cash On Delivery payment method class
+ * Przelewy24 payment method class
  *
  * @author    Dariusz Męciński <d.mecinski@cnetic.pl>
  * @copyright 2019 CNetic Sp. z.o.o (http://www.cnetic.pl)
